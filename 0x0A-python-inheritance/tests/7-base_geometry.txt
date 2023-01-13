@@ -1,0 +1,19 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> bg = BaseGeometry()
+
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
+>>> bg.integer_validator("age", 0) #doctest ELIPSIS+
+Traceback (most recent last call):
+...
+ValueError: age must be greater than 0
+>>> bg.integer_validator("name", "ohn") #doctest ELIPSIS+
+Traceback (most recent last call):
+...
+TypeError: name must be an integer
+>>> bg.integer_validator("distance", -4) #doctest ELIPSIS+
+Traceback (most recent last call):
+...
+ValueError: distance must be greater than 0
+
