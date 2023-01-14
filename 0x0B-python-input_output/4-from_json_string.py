@@ -7,7 +7,7 @@
 import json
 
 
-def to_json_string(my_str):
+def from_json_string(my_str):
     """create an from a given jsonstring
     Args: my_str - a JSON string
 
