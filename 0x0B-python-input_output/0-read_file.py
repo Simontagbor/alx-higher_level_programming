@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # 0-readfile.py
 # Auth: Simon Tagbor <simontagbor360@gmail.com>
 """ This Program displays the contents of a file """
