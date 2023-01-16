@@ -78,3 +78,8 @@ class Rectangle(Base):
     def area(self):
         """define public area property for rectangle """
         return (self.width * self.height)
+
+    def display(self):
+        """Display rectangle using # """
+        for i in range(self.height + 1):
+            print("{}".format(self.width * "#"))
