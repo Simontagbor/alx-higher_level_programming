@@ -87,6 +87,26 @@ class Rectangle(Base):
             [print(" ", end="") for x in range(self.x)]
             print("{}".format(self.width * "#"))
 
+    def update(self, *args):
+        """Assign an argument to each attribute"""
+        if args and len(args) != 0:
+            count = 0
+            for arg in args:
+                if count == 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif count == 1:
+                    self.width = arg
+                elif count == 2:
+                    self.height = arg
+                elif count == 3:
+                    self.x = arg
+                elif count  == 5:
+                    self.y = arg
+                count += 1
+
     def __str__(self):
         """specify string method for rectangle class"""
         return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
