@@ -29,6 +29,38 @@ class Square(Rectangle):
         self.width = size
         self.height = size
 
+    def update(self, *args, **kwargs):
+        """update instance attributes using arguments
+
+        Args:
+            args (int): The list of non-keyworded arguments
+            kwargs (int): a list of keyworded arguments
+        """
+
+        if args and len(args) != 0:
+            count = 0
+            for count in range(len(args)):
+                for arg in args:
+                    if count == 0:
+                        self.id = arg
+                    if count == 1:
+                        self.size = arg
+                    if count == 2:
+                        self.x = arg
+                    if count == 3:
+                        self.y = arg
+                    count += 1
+        elif kwargs and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "size":
+                    self.size = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
+
     def __str__(self):
         """specify string method for rectangle class"""
         return "[{}] ({}) {}/{} - {}".format(self.__class__.__name__,
