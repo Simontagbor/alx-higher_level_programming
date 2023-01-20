@@ -25,7 +25,7 @@ class Rectangle(Base):
         """Add validation"""
         if type(width) != int:
             raise TypeError("width must be an integer")
-        if width <= 0:
+        if width < 0:
             raise ValueError("width must be > 0")
         else:
             self.__width = width
@@ -40,7 +40,7 @@ class Rectangle(Base):
         """Add validation"""
         if type(height) != int:
             raise TypeError("height must be an integer")
-        if height <= 0:
+        if height < 0:
             raise ValueError("height must be > 0")
         else:
             self.__height = height
@@ -87,8 +87,14 @@ class Rectangle(Base):
             [print(" ", end="") for x in range(self.x)]
             print("{}".format(self.width * "#"))
 
-    def update(self, *args):
-        """Assign an argument to each attribute"""
+    def update(self, *args, **kwargs):
+        """Assign an argument to each attribute
+
+        Args:
+            args(int): non-keyworded arguments used in update
+            kwargs(int): used in assigning keyword arguments.
+        """
+
         if args and len(args) != 0:
             count = 0
             for arg in args:
@@ -103,9 +109,25 @@ class Rectangle(Base):
                     self.height = arg
                 elif count == 3:
                     self.x = arg
-                elif count  == 5:
+                elif count == 5:
                     self.y = arg
                 count += 1
+
+        elif kwargs and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = value
+                if key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
 
     def __str__(self):
         """specify string method for rectangle class"""
