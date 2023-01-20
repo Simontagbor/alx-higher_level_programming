@@ -61,6 +61,15 @@ class Square(Rectangle):
                 elif key == "y":
                     self.y = value
 
+    def to_dictionary(self):
+        """Return the dictionary representation of the Square instance"""
+        return {
+            "id": self.id,
+            "size": self.size,
+            "x": self.x,
+            "y": self.y
+        }
+
     def __str__(self):
         """specify string method for rectangle class"""
         return "[{}] ({}) {}/{} - {}".format(self.__class__.__name__,
