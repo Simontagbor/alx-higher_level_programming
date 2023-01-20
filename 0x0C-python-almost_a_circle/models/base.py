@@ -36,7 +36,7 @@ class Base(object):
     @classmethod
     def save_to_file(cls, list_objs):
         """Save json string to file"""
-        filename =  "{}.json".format(cls.__name__)
+        filename = "{}.json".format(cls.__name__)
 
         with open(filename, "w", encoding="utf-8") as f:
             if list_objs is None:
