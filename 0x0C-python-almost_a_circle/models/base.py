@@ -47,11 +47,32 @@ class Base(object):
 
     @classmethod
     def create(cls, **dictionary):
-        """returns an instance with all attribute set """
-        if dictionary and dictionary != {}:
+        """returns an instance with all attribute set
+        Args:
+            dictionary (dict): a dictionary of attributes
+        Returns:
+            a new instance of either Rectangle or Square
+        """
+        if dictionary and dictionry != {}:
             if cls.__name__ == "Rectangle":
                 new = cls(1, 1)
             else:
                 new = cls(1)
             new.update(**dictionary)
             return new
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances
+        Arg:
+            cls (class instance): the class instance of Rectangle or Square
+
+        Returns: a list  of instances
+        """
+        filename = "{}.json".format(cls.__name__)
+        with open(filename, "r", encoding="utf-8") as f:
+            if FileNotFoundError:
+                return []
+            else:
+                list_dicts = Base.from_json(f.read())
+                return [cls.create(**d) for d in list_dicts]
