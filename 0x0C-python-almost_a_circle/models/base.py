@@ -44,3 +44,14 @@ class Base(object):
             else:
                 dicts = [obj.to_dictionary() for obj in list_objs]
                 f.write(Base.to_json_string(dicts))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attribute set """
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                new = cls(1, 1)
+            else:
+                new = cls(1)
+            new.update(**dictionary)
+            return new
