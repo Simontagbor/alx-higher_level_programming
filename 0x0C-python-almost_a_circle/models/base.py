@@ -5,6 +5,7 @@
 
 
 import json
+import os
 
 
 class Base(object):
@@ -53,7 +54,7 @@ class Base(object):
         Returns:
             a new instance of either Rectangle or Square
         """
-        if dictionary and dictionry != {}:
+        if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
                 new = cls(1, 1)
             else:
@@ -70,9 +71,8 @@ class Base(object):
         Returns: a list  of instances
         """
         filename = "{}.json".format(cls.__name__)
+        if os.path.exists(filename) is False:
+            return []
         with open(filename, "r", encoding="utf-8") as f:
-            if FileNotFoundError:
-                return []
-            else:
-                list_dicts = Base.from_json(f.read())
-                return [cls.create(**d) for d in list_dicts]
+            list_dicts = Base.from_json_string(f.read())
+            return [cls.create(**d) for d in list_dicts]
