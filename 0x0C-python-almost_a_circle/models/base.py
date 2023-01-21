@@ -6,6 +6,7 @@
 
 import json
 import os
+import csv
 
 
 class Base(object):
@@ -76,3 +77,28 @@ class Base(object):
         with open(filename, "r", encoding="utf-8") as f:
             list_dicts = Base.from_json_string(f.read())
             return [cls.create(**d) for d in list_dicts]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ save to file csv method """
+        filename = "{}.csv".format(cls.__name__)
+        if cls.__name__ == "Rectangle":
+            list_dict = [0, 0, 0, 0, 0]
+            list_keys = ['id', 'width', 'height', 'x', 'y']
+        else:
+            list_dict = ['0', '0', '0', '0']
+            list_keys = ['id', 'size', 'x', 'y']
+
+        matrix = []
+
+        if not list_objs:
+            pass
+        else:
+            for obj in list_objs:
+                for kv in range(len(list_keys)):
+                    list_dict[kv] = obj.to_dictionary()[list_keys[kv]]
+                    matrix.append(list_dict[:])
+
+        with open(filename, 'w', encoding="utf-8") as f:
+            writ = csv.writer(f)
+            writ.writerows(matrix)
