@@ -1,8 +1,7 @@
 # Higher-level programming - Python, Databases & JavaScript
 
 This repository contains programs written for the higher-level programming
-track at Holberton School. In these projects, which began occurring in month
-four of the year one curriculum, I learned Python, MySQL and JavaScript.
+track at ALX SE School. In these projects, I learned Python, MySQL and JavaScript.
 Simultaneously, I continued to reinforce and expand my skills in C and shell
 scripting. The specific list of projects contained follows:
 
@@ -22,6 +21,7 @@ scripting. The specific list of projects contained follows:
 * [0x0D. SQL - Introduction](./0x0D-SQL_introduction)
 * [0x0E. SQL - More queries](./0x0E-SQL_more_queries)
 * [0x0F. Python - Object-relational mapping](./0x0F-python-object_relational_mapping)
+* [0x0G. python - AirBnB_clone -The Console](https://github.com/anyadoer22/AirBnB_clone)
 * [0x10. Python - Network #0](./0x10-python-network_0)
 * [0x11. Python - Network #1](./0x11-python-network_1)
 * [0x12. Javascript - Warm up](./0x12-javascript-warm_up)
