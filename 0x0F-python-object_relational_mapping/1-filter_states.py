@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 # List all statse with the name starting with N from  hbtn_0e_0_usa
-# Usage ./0-select_states.py [mysql username] \ 
-#                            [mysql password] \ 
-#                            [database name] 
+# Usage ./0-select_states.py [mysql username] \
+#                            [mysql password] \
+#                            [database name]
 
 import sys
 import MySQLdb
