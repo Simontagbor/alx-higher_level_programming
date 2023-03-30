@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines algorithm for finding peak"""
 
+
 def find_peak(list_of_integers):
     """Return a peak in a list of unsorted integers."""
     if list_of_integers == []:
