@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const args = process.argv;
 const arr = Object.values(args);
-const str = 'x';
+const str = 'X';
 
 if (isNaN(parseInt(arr[2]))) {
   console.log('Missing size');
