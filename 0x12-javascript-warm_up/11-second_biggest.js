@@ -2,7 +2,7 @@
 const args = process.argv;
 const arr = Object.values(args).slice(2);
 const numbers = arr.map(str => {
-    return parseInt(str, 10);
+  return parseInt(str, 10);
 });
 
 function findSecondBiggest (arr) {
