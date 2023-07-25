@@ -17,4 +17,7 @@ I wrote a script that writes a given content to a file
 Usage: ` ./1-writeme <file_path> <content> `
 the script relies on a call back function to notify the user if an error was encountered.
 
+### 2. Status code
 
+I wrote a script that displays the status code of a GET Request
+Usage: ` ./2-statuscode.js  <URL> `
